@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/common_widgets/custom_eleveted_button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -9,6 +10,7 @@ class SignInPage extends StatelessWidget {
         elevation: 2.0,
       ),
       body: _buildContext(),
+      backgroundColor: Colors.grey[100],
     );
   }
 
@@ -36,6 +38,22 @@ class SignInPage extends StatelessWidget {
           ElevatedButton(
             onPressed: _signInWithGoogle,
             child: Text('Sign in with Google'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.black, // Background color
+              // onPrimary: Colors.black, // Foreground color
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+            ),
+          ),
+          SizedBox(height: 8.0),
+
+          //! Custom buuton
+          CustomElevatedButton(
+            child: Text('Sign in with Facebook'),
+            color: Colors.red,
+            borderRadius: 5.0,
+            onPressed: _signInWithGoogle,
           ),
         ],
       ),
